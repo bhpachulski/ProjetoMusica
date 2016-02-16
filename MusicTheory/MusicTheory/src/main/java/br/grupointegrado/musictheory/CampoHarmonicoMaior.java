@@ -18,10 +18,10 @@ public class CampoHarmonicoMaior implements CampoHarmonico {
         
         this.tonica = tonica;
         
-        composicao.put(Grau.I,   Intervalo.NULO);
+        composicao.put(Grau.I,   Intervalo.TOM);
         composicao.put(Grau.II,  Intervalo.TOM);
-        composicao.put(Grau.III, Intervalo.TOM);
-        composicao.put(Grau.IV,  Intervalo.SEMITOM);
+        composicao.put(Grau.III, Intervalo.SEMITOM);
+        composicao.put(Grau.IV,  Intervalo.TOM);
         composicao.put(Grau.V,   Intervalo.TOM);
         composicao.put(Grau.VI,  Intervalo.TOM);
         composicao.put(Grau.VII, Intervalo.TOM);
@@ -32,17 +32,32 @@ public class CampoHarmonicoMaior implements CampoHarmonico {
     public void setCampoHarmonicoTonica () {
         
         int currentElement = Nota.getPosicaoNota(tonica);
+        int valorNotaNoGrau = 0;
         
         for (Grau grau : Grau.values()) {
             
             if (currentElement > 6)
                 currentElement = 0;
-                    
-            grauNotaAcidente.put(grau, new NotaAcidente(Nota.values()[currentElement], Acidente.NATURAL));
+            
+            grauNotaAcidente.put(grau, new NotaAcidente(Nota.values()[currentElement], this.getAcidente(valorNotaNoGrau)));
+            
+            int intervaloDoGrau = composicao.get(grau).getValor();
+            int intervaloDaNota = Nota.values()[currentElement].getIntervalo().getValor();
+            valorNotaNoGrau += intervaloDaNota - intervaloDoGrau; 
+            
             currentElement++;
             
         }
         
+    }
+    
+    public Acidente getAcidente (int valor) {
+        if (valor > 0)
+            return Acidente.BEMOL;
+        else if (valor < 0 )
+            return Acidente.SUSTENIDO;
+                    
+        return Acidente.NATURAL;
     }
 
     @Override

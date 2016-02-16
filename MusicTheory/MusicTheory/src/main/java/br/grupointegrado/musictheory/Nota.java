@@ -9,7 +9,17 @@ import java.util.TreeMap;
  */
 public enum Nota {
     
-    C, D, E, F, G, A, B;
+    C(Intervalo.TOM), D(Intervalo.TOM), E(Intervalo.SEMITOM), F(Intervalo.TOM), G(Intervalo.TOM), A(Intervalo.TOM), B(Intervalo.SEMITOM);
+    
+    private Intervalo intervalo;
+
+    private Nota(Intervalo intervalo) {
+        this.intervalo = intervalo;
+    }
+
+    public Intervalo getIntervalo() {
+        return intervalo;
+    }
     
     private static Map<Nota, Integer> posicaoNota = new TreeMap<>();
     
