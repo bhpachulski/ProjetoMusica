@@ -16,6 +16,11 @@ public class Main {
 
     public static void main(String[] args) {
         
+//        F -> Dm  (1):  (2): (3): (4): (5):
+//        G -> Em  (1): 3 (2):5 (3):7 (4):10 (5):12
+//        A -> F#m (1):  (2): (3): (4): (5):
+//        B -> G#m (1):  (2): (3): (4): (5):
+        
         List<String> notes = new ArrayList<>();
         notes.add("C");
         notes.add("D");
