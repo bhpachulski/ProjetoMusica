@@ -93,11 +93,8 @@ public class CampoHarmonicoImpl implements CampoHarmonico {
     }
 
     @Override
-    public NotaAcidente getGrau(Grau grau) {
-        
-        int valor = getValorGrau(grau);
-        
-        return new NotaAcidente(Nota.A, Acidente.SUSTENIDO, new ArrayList<>(Arrays.asList(Variacao.MAIOR)));
+    public NotaAcidente getGrau(Grau grau) {        
+        return grauNotaAcidente.get(grau);        
     }
     
     

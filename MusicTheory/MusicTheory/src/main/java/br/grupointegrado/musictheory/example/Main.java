@@ -1,6 +1,7 @@
 package br.grupointegrado.musictheory.example;
 
 import br.grupointegrado.musictheory.CampoHarmonicoImpl;
+import br.grupointegrado.musictheory.Grau;
 import br.grupointegrado.musictheory.Nota;
 
 /**
@@ -13,6 +14,7 @@ public class Main {
         
         CampoHarmonicoImpl campoC = new CampoHarmonicoImpl(Nota.C);
         System.out.println(campoC.grauNotaAcidente);
+        System.out.println(campoC.getGrau(Grau.V));
         
         CampoHarmonicoImpl campoD = new CampoHarmonicoImpl(Nota.D);
         System.out.println(campoD.grauNotaAcidente);
