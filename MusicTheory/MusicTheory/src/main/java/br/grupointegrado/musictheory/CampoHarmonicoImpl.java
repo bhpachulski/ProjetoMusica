@@ -11,8 +11,8 @@ import java.util.TreeMap;
  */
 public class CampoHarmonicoImpl implements CampoHarmonico {
     
-    private Map<Grau, Intervalo> campoHarmonicoMaiorIntervalo = new TreeMap<>();
-    private Map<Grau, ArrayList<Variacao>> campoHarmonicoMaiorVariacao = new TreeMap<>();
+    private Map<Grau, Intervalo> campoHarmonicoIntervalo = new TreeMap<>();
+    private Map<Grau, ArrayList<Variacao>> campoHarmonicoVariacao = new TreeMap<>();
     
     public Map<Grau, NotaAcidente> grauNotaAcidente = new TreeMap<>();
     
@@ -22,21 +22,21 @@ public class CampoHarmonicoImpl implements CampoHarmonico {
         
         this.tonica = tonica;
         
-        campoHarmonicoMaiorIntervalo.put(Grau.I,   Intervalo.TOM);
-        campoHarmonicoMaiorIntervalo.put(Grau.II,  Intervalo.TOM);
-        campoHarmonicoMaiorIntervalo.put(Grau.III, Intervalo.SEMITOM);
-        campoHarmonicoMaiorIntervalo.put(Grau.IV,  Intervalo.TOM);
-        campoHarmonicoMaiorIntervalo.put(Grau.V,   Intervalo.TOM);
-        campoHarmonicoMaiorIntervalo.put(Grau.VI,  Intervalo.TOM);
-        campoHarmonicoMaiorIntervalo.put(Grau.VII, Intervalo.SEMITOM);
+        campoHarmonicoIntervalo.put(Grau.I,   Intervalo.TOM);
+        campoHarmonicoIntervalo.put(Grau.II,  Intervalo.TOM);
+        campoHarmonicoIntervalo.put(Grau.III, Intervalo.SEMITOM);
+        campoHarmonicoIntervalo.put(Grau.IV,  Intervalo.TOM);
+        campoHarmonicoIntervalo.put(Grau.V,   Intervalo.TOM);
+        campoHarmonicoIntervalo.put(Grau.VI,  Intervalo.TOM);
+        campoHarmonicoIntervalo.put(Grau.VII, Intervalo.SEMITOM);
         
-        campoHarmonicoMaiorVariacao.put(Grau.I,   new ArrayList<>(Arrays.asList(Variacao.MAIOR)));
-        campoHarmonicoMaiorVariacao.put(Grau.II,  new ArrayList<>(Arrays.asList(Variacao.MENOR)));
-        campoHarmonicoMaiorVariacao.put(Grau.III, new ArrayList<>(Arrays.asList(Variacao.MENOR)));
-        campoHarmonicoMaiorVariacao.put(Grau.IV,  new ArrayList<>(Arrays.asList(Variacao.MAIOR)));
-        campoHarmonicoMaiorVariacao.put(Grau.V,   new ArrayList<>(Arrays.asList(Variacao.MAIOR)));
-        campoHarmonicoMaiorVariacao.put(Grau.VI,  new ArrayList<>(Arrays.asList(Variacao.MENOR)));
-        campoHarmonicoMaiorVariacao.put(Grau.VII, new ArrayList<>(Arrays.asList(Variacao.MENOR, Variacao.DIM)));
+        campoHarmonicoVariacao.put(Grau.I,   new ArrayList<>(Arrays.asList(Variacao.MAIOR)));
+        campoHarmonicoVariacao.put(Grau.II,  new ArrayList<>(Arrays.asList(Variacao.MENOR)));
+        campoHarmonicoVariacao.put(Grau.III, new ArrayList<>(Arrays.asList(Variacao.MENOR)));
+        campoHarmonicoVariacao.put(Grau.IV,  new ArrayList<>(Arrays.asList(Variacao.MAIOR)));
+        campoHarmonicoVariacao.put(Grau.V,   new ArrayList<>(Arrays.asList(Variacao.MAIOR)));
+        campoHarmonicoVariacao.put(Grau.VI,  new ArrayList<>(Arrays.asList(Variacao.MENOR)));
+        campoHarmonicoVariacao.put(Grau.VII, new ArrayList<>(Arrays.asList(Variacao.MENOR, Variacao.DIM)));
         
         setCampoHarmonicoTonica ();
     }
@@ -51,9 +51,9 @@ public class CampoHarmonicoImpl implements CampoHarmonico {
             if (currentElement > 6)
                 currentElement = 0;
             
-            grauNotaAcidente.put(grau, new NotaAcidente(Nota.values()[currentElement], this.getAcidente(valorNotaNoGrau), campoHarmonicoMaiorVariacao.get(grau)));
+            grauNotaAcidente.put(grau, new NotaAcidente(Nota.values()[currentElement], this.getAcidente(valorNotaNoGrau), campoHarmonicoVariacao.get(grau)));
             
-            int intervaloDoGrau = campoHarmonicoMaiorIntervalo.get(grau).getValor();
+            int intervaloDoGrau = campoHarmonicoIntervalo.get(grau).getValor();
             int intervaloDaNota = Nota.values()[currentElement].getIntervalo().getValor();
             valorNotaNoGrau += intervaloDaNota - intervaloDoGrau; 
             
@@ -74,13 +74,13 @@ public class CampoHarmonicoImpl implements CampoHarmonico {
 
     @Override
     public Map<Grau, Intervalo> getComposicao() {
-        return campoHarmonicoMaiorIntervalo;
+        return campoHarmonicoIntervalo;
     }
     
     public int getValorGrau (Grau grau) {
         int valor=0;
         
-        for (Map.Entry<Grau, Intervalo> entry : campoHarmonicoMaiorIntervalo.entrySet()) {
+        for (Map.Entry<Grau, Intervalo> entry : campoHarmonicoIntervalo.entrySet()) {
             
             valor += entry.getValue().getValor();
             
@@ -96,7 +96,5 @@ public class CampoHarmonicoImpl implements CampoHarmonico {
     public NotaAcidente getGrau(Grau grau) {        
         return grauNotaAcidente.get(grau);        
     }
-    
-    
     
 }
