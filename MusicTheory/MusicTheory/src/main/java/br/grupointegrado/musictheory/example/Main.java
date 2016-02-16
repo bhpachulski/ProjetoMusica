@@ -1,6 +1,6 @@
 package br.grupointegrado.musictheory.example;
 
-import br.grupointegrado.musictheory.CampoHarmonicoMaior;
+import br.grupointegrado.musictheory.CampoHarmonicoImpl;
 import br.grupointegrado.musictheory.Nota;
 
 /**
@@ -11,25 +11,25 @@ public class Main {
 
     public static void main(String[] args) {
         
-        CampoHarmonicoMaior campoC = new CampoHarmonicoMaior(Nota.C);
+        CampoHarmonicoImpl campoC = new CampoHarmonicoImpl(Nota.C);
         System.out.println(campoC.grauNotaAcidente);
         
-        CampoHarmonicoMaior campoD = new CampoHarmonicoMaior(Nota.D);
+        CampoHarmonicoImpl campoD = new CampoHarmonicoImpl(Nota.D);
         System.out.println(campoD.grauNotaAcidente);
         
-        CampoHarmonicoMaior campoE = new CampoHarmonicoMaior(Nota.E);
+        CampoHarmonicoImpl campoE = new CampoHarmonicoImpl(Nota.E);
         System.out.println(campoE.grauNotaAcidente);
         
-        CampoHarmonicoMaior campoF = new CampoHarmonicoMaior(Nota.F);
+        CampoHarmonicoImpl campoF = new CampoHarmonicoImpl(Nota.F);
         System.out.println(campoF.grauNotaAcidente);
         
-        CampoHarmonicoMaior campoG = new CampoHarmonicoMaior(Nota.G);
+        CampoHarmonicoImpl campoG = new CampoHarmonicoImpl(Nota.G);
         System.out.println(campoG.grauNotaAcidente);
         
-        CampoHarmonicoMaior campoA = new CampoHarmonicoMaior(Nota.A);
+        CampoHarmonicoImpl campoA = new CampoHarmonicoImpl(Nota.A);
         System.out.println(campoA.grauNotaAcidente);
         
-        CampoHarmonicoMaior campoB = new CampoHarmonicoMaior(Nota.B);
+        CampoHarmonicoImpl campoB = new CampoHarmonicoImpl(Nota.B);
         System.out.println(campoB.grauNotaAcidente);
         
         
