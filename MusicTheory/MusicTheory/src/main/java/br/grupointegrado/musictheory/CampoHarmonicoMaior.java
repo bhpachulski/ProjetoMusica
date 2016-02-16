@@ -24,7 +24,7 @@ public class CampoHarmonicoMaior implements CampoHarmonico {
         composicao.put(Grau.IV,  Intervalo.TOM);
         composicao.put(Grau.V,   Intervalo.TOM);
         composicao.put(Grau.VI,  Intervalo.TOM);
-        composicao.put(Grau.VII, Intervalo.TOM);
+        composicao.put(Grau.VII, Intervalo.SEMITOM);
         
         setCampoHarmonicoTonica ();
     }
