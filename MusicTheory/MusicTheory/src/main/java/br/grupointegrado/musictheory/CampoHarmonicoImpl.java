@@ -52,7 +52,7 @@ public class CampoHarmonicoImpl implements CampoHarmonico {
             valorNotaNoGrau += distanciaDaNota - distanciaDoGrau; 
             
             currentElement++;
-        }
+        }  
         
     }
     
