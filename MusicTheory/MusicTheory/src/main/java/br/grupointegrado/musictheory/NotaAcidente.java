@@ -9,9 +9,13 @@ import java.util.List;
 public class NotaAcidente {
 
     private Nota nota;
-    private Acidente acidente;
+    private Acidente acidente = Acidente.NATURAL;
     private List<Variacao> variacao;
 
+    public NotaAcidente(Nota nota) {
+        this.nota = nota;
+    }
+    
     public NotaAcidente(Nota nota, Acidente acidente, List<Variacao> variacao) {
         this.nota = nota;
         this.acidente = acidente;
