@@ -1,7 +1,5 @@
 package br.grupointegrado.musictheory;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -16,10 +14,6 @@ public enum Acidente {
     
     private static List<Integer> intervalos;
     
-    static {
-        intervalos = new ArrayList<>(Arrays.asList(2,4,7,9,11));
-    }
-
     private Acidente(String representação) {
         this.representação = representação;
     }
