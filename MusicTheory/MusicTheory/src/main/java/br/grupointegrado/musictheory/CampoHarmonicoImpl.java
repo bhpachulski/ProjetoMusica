@@ -1,5 +1,6 @@
 package br.grupointegrado.musictheory;
 
+import br.grupointegrado.musictheory.escala.Diatonica;
 import br.grupointegrado.musictheory.escala.Escala;
 import java.util.Map;
 import java.util.TreeMap;
@@ -13,11 +14,16 @@ public class CampoHarmonicoImpl implements CampoHarmonico {
     public Map<Grau, NotaAcidente> grauNotaAcidente = new TreeMap<>();
     
     private NotaAcidente tonica;
-    private Escala escala;
+    private Escala escala = Diatonica.MAIOR;
 
     public CampoHarmonicoImpl(NotaAcidente tonica, Escala escala) {        
         this.tonica = tonica;        
-        this.escala = escala;
+
+        this.setCampoHarmonicoTonica ();
+    }
+
+    public CampoHarmonicoImpl(NotaAcidente tonica) {
+        this.tonica = tonica;
         
         this.setCampoHarmonicoTonica ();
     }

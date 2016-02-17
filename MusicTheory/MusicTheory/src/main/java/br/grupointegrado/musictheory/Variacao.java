@@ -6,7 +6,7 @@ package br.grupointegrado.musictheory;
  */
 public enum Variacao {
     
-    MAIOR(""), MENOR("m"), DIM("°"), SETIMA("7");
+    MAIOR(""), MENOR("m"), DIM("°"), SETIMA("7"), MEIODIM("b5");
     
     private String representação;
 

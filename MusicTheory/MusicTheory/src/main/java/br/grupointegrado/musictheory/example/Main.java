@@ -15,26 +15,26 @@ public class Main {
 
     public static void main(String[] args) {
         
-        CampoHarmonicoImpl campoC = new CampoHarmonicoImpl(new NotaAcidente(Nota.C), Diatonica.MAIOR);
+        CampoHarmonicoImpl campoC = new CampoHarmonicoImpl(new NotaAcidente(Nota.C));
         System.out.println(campoC.grauNotaAcidente);
         System.out.println(campoC.getGrau(Grau.V));
         
-        CampoHarmonicoImpl campoD = new CampoHarmonicoImpl(new NotaAcidente(Nota.D), Diatonica.MAIOR);
+        CampoHarmonicoImpl campoD = new CampoHarmonicoImpl(new NotaAcidente(Nota.D));
         System.out.println(campoD.grauNotaAcidente);
         
-        CampoHarmonicoImpl campoE = new CampoHarmonicoImpl(new NotaAcidente(Nota.E), Diatonica.MAIOR);
+        CampoHarmonicoImpl campoE = new CampoHarmonicoImpl(new NotaAcidente(Nota.E));
         System.out.println(campoE.grauNotaAcidente);
         
-        CampoHarmonicoImpl campoF = new CampoHarmonicoImpl(new NotaAcidente(Nota.F), Diatonica.MAIOR);
+        CampoHarmonicoImpl campoF = new CampoHarmonicoImpl(new NotaAcidente(Nota.F));
         System.out.println(campoF.grauNotaAcidente);
         
-        CampoHarmonicoImpl campoG = new CampoHarmonicoImpl(new NotaAcidente(Nota.G), Diatonica.MAIOR);
+        CampoHarmonicoImpl campoG = new CampoHarmonicoImpl(new NotaAcidente(Nota.G));
         System.out.println(campoG.grauNotaAcidente);
         
-        CampoHarmonicoImpl campoA = new CampoHarmonicoImpl(new NotaAcidente(Nota.A), Diatonica.MAIOR);
+        CampoHarmonicoImpl campoA = new CampoHarmonicoImpl(new NotaAcidente(Nota.A));
         System.out.println(campoA.grauNotaAcidente);
         
-        CampoHarmonicoImpl campoB = new CampoHarmonicoImpl(new NotaAcidente(Nota.B), Diatonica.MAIOR);
+        CampoHarmonicoImpl campoB = new CampoHarmonicoImpl(new NotaAcidente(Nota.B));
         System.out.println(campoB.grauNotaAcidente);
         
         CampoHarmonicoImpl campoCsus = new CampoHarmonicoImpl(new NotaAcidente(Nota.C, Acidente.SUSTENIDO), Diatonica.MAIOR);
