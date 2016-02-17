@@ -47,9 +47,9 @@ public class CampoHarmonicoImpl implements CampoHarmonico {
             
             grauNotaAcidente.put(grau, new Acorde(Nota.values()[currentElement], this.getAcidente(valorNotaNoGrau), this.escala.getVariacao().get(grau)));
             
-            int intervaloDoGrau = escala.getIntervalo().get(grau).getValor();
-            int intervaloDaNota = Nota.values()[currentElement].getIntervalo().getValor();
-            valorNotaNoGrau += intervaloDaNota - intervaloDoGrau; 
+            int distanciaDoGrau = escala.getDistancia().get(grau).getValor();
+            int distanciaDaNota = Nota.values()[currentElement].getDistancia().getValor();
+            valorNotaNoGrau += distanciaDaNota - distanciaDoGrau; 
             
             currentElement++;
         }
@@ -68,7 +68,7 @@ public class CampoHarmonicoImpl implements CampoHarmonico {
     public int getValorGrau (Grau grau) {
         int valor=0;
         
-        for (Map.Entry<Grau, Intervalo> entry : this.escala.getIntervalo().entrySet()) {
+        for (Map.Entry<Grau, Distancia> entry : this.escala.getDistancia().entrySet()) {
             
             valor += entry.getValue().getValor();
             

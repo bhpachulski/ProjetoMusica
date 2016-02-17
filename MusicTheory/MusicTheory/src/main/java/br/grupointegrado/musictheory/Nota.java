@@ -9,14 +9,14 @@ import java.util.TreeMap;
  */
 public enum Nota {
     
-    C(Intervalo.TOM, "C"), D(Intervalo.TOM, "D"), E(Intervalo.SEMITOM, "E"), F(Intervalo.TOM, "F"), 
-    G(Intervalo.TOM, "G"), A(Intervalo.TOM, "A"), B(Intervalo.SEMITOM, "B");
+    C(Distancia.TOM, "C"), D(Distancia.TOM, "D"), E(Distancia.SEMITOM, "E"), F(Distancia.TOM, "F"), 
+    G(Distancia.TOM, "G"), A(Distancia.TOM, "A"), B(Distancia.SEMITOM, "B");
     
-    private Intervalo intervalo;
+    private Distancia distancia;
     private String representacao;
 
-    private Nota(Intervalo intervalo, String representacao) {
-        this.intervalo = intervalo;
+    private Nota(Distancia distancia, String representacao) {
+        this.distancia = distancia;
         this.representacao = representacao;
     }
 
@@ -24,8 +24,8 @@ public enum Nota {
         return representacao;
     }
 
-    public Intervalo getIntervalo() {
-        return intervalo;
+    public Distancia getDistancia() {
+        return distancia;
     }
     
     private static Map<Nota, Integer> posicaoNota = new TreeMap<>();

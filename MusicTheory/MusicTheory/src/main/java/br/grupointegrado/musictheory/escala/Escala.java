@@ -1,7 +1,7 @@
 package br.grupointegrado.musictheory.escala;
 
 import br.grupointegrado.musictheory.Grau;
-import br.grupointegrado.musictheory.Intervalo;
+import br.grupointegrado.musictheory.Distancia;
 import br.grupointegrado.musictheory.Variacao;
 import java.util.ArrayList;
 import java.util.Map;
@@ -12,7 +12,7 @@ import java.util.Map;
  */
 public interface Escala {
     
-    Map<Grau, Intervalo> getIntervalo ();
+    Map<Grau, Distancia> getDistancia ();
     
     Map<Grau, ArrayList<Variacao>> getVariacao ();
     

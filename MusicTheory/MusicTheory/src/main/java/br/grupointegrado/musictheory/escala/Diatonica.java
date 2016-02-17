@@ -1,7 +1,7 @@
 package br.grupointegrado.musictheory.escala;
 
 import br.grupointegrado.musictheory.Grau;
-import br.grupointegrado.musictheory.Intervalo;
+import br.grupointegrado.musictheory.Distancia;
 import br.grupointegrado.musictheory.Variacao;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,16 +17,16 @@ public enum Diatonica implements Escala {
     MAIOR {
 
         @Override
-        public Map<Grau, Intervalo> getIntervalo() {
+        public Map<Grau, Distancia> getDistancia() {
 
-            Map<Grau, Intervalo> intervalo = new TreeMap<>();
-            intervalo.put(Grau.I, Intervalo.TOM);
-            intervalo.put(Grau.II, Intervalo.TOM);
-            intervalo.put(Grau.III, Intervalo.SEMITOM);
-            intervalo.put(Grau.IV, Intervalo.TOM);
-            intervalo.put(Grau.V, Intervalo.TOM);
-            intervalo.put(Grau.VI, Intervalo.TOM);
-            intervalo.put(Grau.VII, Intervalo.SEMITOM);
+            Map<Grau, Distancia> intervalo = new TreeMap<>();
+            intervalo.put(Grau.I, Distancia.TOM);
+            intervalo.put(Grau.II, Distancia.TOM);
+            intervalo.put(Grau.III, Distancia.SEMITOM);
+            intervalo.put(Grau.IV, Distancia.TOM);
+            intervalo.put(Grau.V, Distancia.TOM);
+            intervalo.put(Grau.VI, Distancia.TOM);
+            intervalo.put(Grau.VII, Distancia.SEMITOM);
 
             return intervalo;
         }
