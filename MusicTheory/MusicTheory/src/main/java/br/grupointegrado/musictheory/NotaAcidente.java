@@ -18,6 +18,11 @@ public class NotaAcidente {
         this.variacao = variacao;
     }
 
+    public NotaAcidente(Nota nota, Acidente acidente) {
+        this.nota = nota;
+        this.acidente = acidente;
+    }
+
     public Nota getNota() {
         return nota;
     }
@@ -33,6 +38,9 @@ public class NotaAcidente {
     public String getVariacaoRepresentacao() {
         
         String representacao = "";
+        
+        if (variacao == null)
+            return representacao;
         
         for (Variacao v : variacao) 
             representacao += v.getRepresentação();

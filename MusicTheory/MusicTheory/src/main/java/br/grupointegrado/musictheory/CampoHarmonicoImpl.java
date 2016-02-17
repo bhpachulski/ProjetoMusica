@@ -16,9 +16,9 @@ public class CampoHarmonicoImpl implements CampoHarmonico {
     
     public Map<Grau, NotaAcidente> grauNotaAcidente = new TreeMap<>();
     
-    private Nota tonica;
+    private NotaAcidente tonica;
 
-    public CampoHarmonicoImpl(Nota tonica) {
+    public CampoHarmonicoImpl(NotaAcidente tonica) {
         
         this.tonica = tonica;
         
@@ -43,8 +43,14 @@ public class CampoHarmonicoImpl implements CampoHarmonico {
     
     public void setCampoHarmonicoTonica () {
         
-        int currentElement = Nota.getPosicaoNota(tonica);
+        int currentElement = Nota.getPosicaoNota(tonica.getNota());
+        
         int valorNotaNoGrau = 0;
+        
+        if (tonica.getAcidente() == Acidente.SUSTENIDO)
+            valorNotaNoGrau = -1;
+        else if (tonica.getAcidente() == Acidente.BEMOL)
+            valorNotaNoGrau = 1;
         
         for (Grau grau : Grau.values()) {
             

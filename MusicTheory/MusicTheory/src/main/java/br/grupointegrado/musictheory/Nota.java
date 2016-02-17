@@ -9,12 +9,19 @@ import java.util.TreeMap;
  */
 public enum Nota {
     
-    C(Intervalo.TOM), D(Intervalo.TOM), E(Intervalo.SEMITOM), F(Intervalo.TOM), G(Intervalo.TOM), A(Intervalo.TOM), B(Intervalo.SEMITOM);
+    C(Intervalo.TOM, "C"), D(Intervalo.TOM, "D"), E(Intervalo.SEMITOM, "E"), F(Intervalo.TOM, "F"), 
+    G(Intervalo.TOM, "G"), A(Intervalo.TOM, "A"), B(Intervalo.SEMITOM, "B");
     
     private Intervalo intervalo;
+    private String representacao;
 
-    private Nota(Intervalo intervalo) {
+    private Nota(Intervalo intervalo, String representacao) {
         this.intervalo = intervalo;
+        this.representacao = representacao;
+    }
+
+    public String getRepresentacao() {
+        return representacao;
     }
 
     public Intervalo getIntervalo() {
@@ -36,4 +43,10 @@ public enum Nota {
     public static int getPosicaoNota(Nota nota) {
         return posicaoNota.get(nota);
     }
+
+    @Override
+    public String toString() {
+        return this.getRepresentacao();
+    }
+        
 }
