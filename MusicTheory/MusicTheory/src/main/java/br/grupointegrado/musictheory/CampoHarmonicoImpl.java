@@ -45,6 +45,7 @@ public class CampoHarmonicoImpl implements CampoHarmonico {
         
         int currentElement = Nota.getPosicaoNota(tonica.getNota());
         
+        //natural
         int valorNotaNoGrau = 0;
         
         if (tonica.getAcidente() == Acidente.SUSTENIDO)
