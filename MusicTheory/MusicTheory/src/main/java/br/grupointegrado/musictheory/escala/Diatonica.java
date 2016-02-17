@@ -46,5 +46,38 @@ public enum Diatonica implements Escala {
             return variacao;
         }
 
+    },
+    
+    MENOR {
+        
+        @Override
+        public Map<Grau, Intervalo> getIntervalo () {
+        
+            Map<Grau, Intervalo> intervalo = new TreeMap<>();
+            intervalo.put(Grau.I, Intervalo.TOM);
+            intervalo.put(Grau.II, Intervalo.SEMITOM);
+            intervalo.put(Grau.III, Intervalo.TOM);
+            intervalo.put(Grau.IV, Intervalo.TOM);
+            intervalo.put(Grau.V, Intervalo.SEMITOM);
+            intervalo.put(Grau.VI, Intervalo.TOM);
+            intervalo.put(Grau.VII, Intervalo.TOM);
+            
+            return intervalo;
+        }
+
+        @Override
+        public Map<Grau, ArrayList<Variacao>> getVariacao() {
+            Map<Grau, ArrayList<Variacao>> variacao = new TreeMap<>();
+            
+            variacao.put(Grau.I, new ArrayList<>(Arrays.asList(Variacao.MENOR)));
+            variacao.put(Grau.II, new ArrayList<>(Arrays.asList(Variacao.MENOR, Variacao.MEIODIM)));
+            variacao.put(Grau.III, new ArrayList<>(Arrays.asList(Variacao.MAIOR)));
+            variacao.put(Grau.IV, new ArrayList<>(Arrays.asList(Variacao.MENOR)));
+            variacao.put(Grau.V, new ArrayList<>(Arrays.asList(Variacao.MENOR)));
+            variacao.put(Grau.VI, new ArrayList<>(Arrays.asList(Variacao.MAIOR)));
+            variacao.put(Grau.VII, new ArrayList<>(Arrays.asList(Variacao.MAIOR)));
+            
+            return variacao;
+        }
     }
 }
