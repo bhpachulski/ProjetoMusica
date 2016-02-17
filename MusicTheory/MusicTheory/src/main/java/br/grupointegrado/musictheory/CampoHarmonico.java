@@ -8,6 +8,6 @@ import java.util.Map;
  */
 public interface CampoHarmonico {
 
-    public Acorde getGrau (Grau grau);
+    public Tonalidade getGrau (Grau grau);
     
 }
