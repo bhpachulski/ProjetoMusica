@@ -6,23 +6,23 @@ import java.util.List;
  *
  * @author bhpachulski
  */
-public class NotaAcidente {
+public class Acorde {
 
     private Nota nota;
     private Acidente acidente = Acidente.NATURAL;
     private List<Variacao> variacao;
 
-    public NotaAcidente(Nota nota) {
+    public Acorde(Nota nota) {
         this.nota = nota;
     }
     
-    public NotaAcidente(Nota nota, Acidente acidente, List<Variacao> variacao) {
+    public Acorde(Nota nota, Acidente acidente, List<Variacao> variacao) {
         this.nota = nota;
         this.acidente = acidente;
         this.variacao = variacao;
     }
 
-    public NotaAcidente(Nota nota, Acidente acidente) {
+    public Acorde(Nota nota, Acidente acidente) {
         this.nota = nota;
         this.acidente = acidente;
     }

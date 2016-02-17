@@ -11,18 +11,18 @@ import java.util.TreeMap;
  */
 public class CampoHarmonicoImpl implements CampoHarmonico {
     
-    public Map<Grau, NotaAcidente> grauNotaAcidente = new TreeMap<>();
+    public Map<Grau, Acorde> grauNotaAcidente = new TreeMap<>();
     
-    private NotaAcidente tonica;
+    private Acorde tonica;
     private Escala escala = Diatonica.MAIOR;
 
-    public CampoHarmonicoImpl(NotaAcidente tonica, Escala escala) {        
+    public CampoHarmonicoImpl(Acorde tonica, Escala escala) {        
         this.tonica = tonica;        
 
         this.setCampoHarmonicoTonica ();
     }
 
-    public CampoHarmonicoImpl(NotaAcidente tonica) {
+    public CampoHarmonicoImpl(Acorde tonica) {
         this.tonica = tonica;
         
         this.setCampoHarmonicoTonica ();
@@ -45,7 +45,7 @@ public class CampoHarmonicoImpl implements CampoHarmonico {
             if (currentElement > 6)
                 currentElement = 0;
             
-            grauNotaAcidente.put(grau, new NotaAcidente(Nota.values()[currentElement], this.getAcidente(valorNotaNoGrau), this.escala.getVariacao().get(grau)));
+            grauNotaAcidente.put(grau, new Acorde(Nota.values()[currentElement], this.getAcidente(valorNotaNoGrau), this.escala.getVariacao().get(grau)));
             
             int intervaloDoGrau = escala.getIntervalo().get(grau).getValor();
             int intervaloDaNota = Nota.values()[currentElement].getIntervalo().getValor();
@@ -81,7 +81,7 @@ public class CampoHarmonicoImpl implements CampoHarmonico {
     }
 
     @Override
-    public NotaAcidente getGrau(Grau grau) {        
+    public Acorde getGrau(Grau grau) {        
         return grauNotaAcidente.get(grau);        
     }
     
