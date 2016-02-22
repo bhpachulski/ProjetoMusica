@@ -5,7 +5,7 @@ import java.util.TreeMap;
 
 /**
  *
- * @author i17411
+ * @author José Augusto
  */
 public enum Triade implements Acorde{
     
