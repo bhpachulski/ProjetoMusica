@@ -11,7 +11,6 @@ public enum Acidente {
     SUSTENIDO("#"), BEMOL("b"), NATURAL("");
     
     private String representação;
-    
     private static List<Integer> intervalos;
     
     private Acidente(String representação) {

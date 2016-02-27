@@ -12,7 +12,6 @@ import java.util.TreeMap;
 public class CampoHarmonicoImpl implements CampoHarmonico {
     
     public Map<Grau, Tonalidade> grauNotaAcidente = new TreeMap<>();
-    
     private Tonalidade tonica;
     private Escala escala = Diatonica.MAIOR;
 

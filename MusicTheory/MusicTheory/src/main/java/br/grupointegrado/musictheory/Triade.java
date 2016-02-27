@@ -19,6 +19,8 @@ public enum Triade implements Acorde{
             intervaloAcorde.put(Grau.V, Distancia.TOM);
             
             return intervaloAcorde;
-        } 
+        }
+        
     }
+    
 }

@@ -16,7 +16,7 @@ public class Main {
 
     public static void main(String[] args) {
         
-        CampoHarmonicoImpl campoC = new CampoHarmonicoImpl(new Tonalidade(Nota.C));
+        CampoHarmonicoImpl campoC = new CampoHarmonicoImpl(new Tonalidade(Nota.D));
         System.out.println(campoC.grauNotaAcidente);
 //        
 //        CampoHarmonicoImpl campoD = new CampoHarmonicoImpl(new Tonalidade(Nota.D));

@@ -14,7 +14,17 @@ public enum Nota {
     
     private Distancia distancia;
     private String representacao;
-
+    private static Map<Nota, Integer> posicaoNota = new TreeMap<>();
+    static {
+        posicaoNota.put(C, 0);
+        posicaoNota.put(D, 1);
+        posicaoNota.put(E, 2);
+        posicaoNota.put(F, 3);
+        posicaoNota.put(G, 4);
+        posicaoNota.put(A, 5);
+        posicaoNota.put(B, 6);
+    }
+    
     private Nota(Distancia distancia, String representacao) {
         this.distancia = distancia;
         this.representacao = representacao;
@@ -27,18 +37,6 @@ public enum Nota {
     public Distancia getDistancia() {
         return distancia;
     }
-    
-    private static Map<Nota, Integer> posicaoNota = new TreeMap<>();
-    
-    static {
-        posicaoNota.put(C, 0);
-        posicaoNota.put(D, 1);
-        posicaoNota.put(E, 2);
-        posicaoNota.put(F, 3);
-        posicaoNota.put(G, 4);
-        posicaoNota.put(A, 5);
-        posicaoNota.put(B, 6);
-    }
 
     public static int getPosicaoNota(Nota nota) {
         return posicaoNota.get(nota);
@@ -47,6 +45,5 @@ public enum Nota {
     @Override
     public String toString() {
         return this.getRepresentacao();
-    }
-        
+    }   
 }
